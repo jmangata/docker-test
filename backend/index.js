@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Bienvenue sur mon serveur Node.js 🚀");
+  res.send("Bienvenue sur mon SUPER MEGA GENIAL serveur Node.js 🚀");
 });
 
 

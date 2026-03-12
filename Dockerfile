@@ -69,7 +69,7 @@ RUN a2enmod auth_gssapi rewrite proxy proxy_http proxy_balancer headers
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
-COPY ./pvc-be/package*.json ./
+COPY ./backend/package*.json ./
 
 RUN npm config set strict-ssl false
 # Install Node.js dependencies
@@ -79,7 +79,7 @@ RUN npm install
 RUN npm install -g nodemon
 
 # Copy the rest of the application code
-COPY ./pvc-be/ .
+COPY ./backend/ .
 
 # Copy the virtual host configuration
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf

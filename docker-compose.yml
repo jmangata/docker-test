@@ -21,3 +21,16 @@ services:
           path: ./backend/package-lock.json
         - action: rebuild
           path: ./vhost.conf
+
+  postgis:
+    image: postgis/postgis:latest
+    environment:
+      POSTGRES_DB: annuaire_ctm
+      POSTGRES_PASSWORD: madinina972
+      POSTGRES_USER: postgres
+      
+    volumes:
+      - postgis_data_annuaire:/var/lib/postgresql/data
+volumes:
+  postgis_data_annuaire:
+

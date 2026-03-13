@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   backend:
-    build: .
+    build: 
     container_name: node_backend
     ports:
       - "80:80"
@@ -23,6 +23,8 @@ services:
           path: ./vhost.conf
 
   postgis:
+    ports:
+      - "5432:5432"
     image: postgis/postgis:latest
     environment:
       POSTGRES_DB: annuaire_ctm
